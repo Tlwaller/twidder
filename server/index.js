@@ -25,5 +25,6 @@ massive(CONNECTION_STRING).then(db => {
 });
 
 app.post("/auth/register", authController.register);
+app.post("/auth/login", authController.login);
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`));
