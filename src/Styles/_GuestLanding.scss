@@ -1,0 +1,30 @@
+#gl-container {
+  display: flex;
+  flex-direction: row;
+
+  #gl-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue-bird;
+    height: 100vh;
+    width: 50%;
+
+    #gl-bullets {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 10em;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+        .gl-icon {
+          height: 2.5em;
+        }
+      }
+    }
+  }
+}
