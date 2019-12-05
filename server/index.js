@@ -24,7 +24,9 @@ massive(CONNECTION_STRING).then(db => {
   console.log("db connected");
 });
 
+//auth
 app.post("/auth/register", authController.register);
 app.post("/auth/login", authController.login);
+app.post("/auth/logout", authController.logout);
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`));

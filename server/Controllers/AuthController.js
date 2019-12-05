@@ -40,9 +40,6 @@ module.exports = {
     if (!foundUser[0]) {
       res.status(401).json("Inncorrect username/password");
     } else {
-      // console.log(
-      //   `password: ${password}, foundUser hash: ${foundUser[0].password}`
-      // );
       const isAuthenticated = bcrypt.compareSync(
         password,
         foundUser[0].password
@@ -58,5 +55,10 @@ module.exports = {
         res.status(200).json(req.session.user);
       }
     }
+  },
+
+  logout: async (req, res) => {
+    req.session.destroy();
+    res.sendStatus(200);
   }
 };
