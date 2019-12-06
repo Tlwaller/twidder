@@ -2,8 +2,26 @@ import React, { Component } from "react";
 import eyeglass from "../images/eyeglass.png";
 import ppl from "../images/ppl.png";
 import bubble from "../images/bubble.png";
+import birb from "../images/birb.png";
 
 class GuestLanding extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      password: ""
+    };
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+    console.log(e.target.name + ": " + this.state[e.target.name]);
+  };
+
+  // login = () => {
+
+  // }
+
   render() {
     return (
       <div id="gl-container">
@@ -15,7 +33,7 @@ class GuestLanding extends Component {
             </li>
             <li>
               <img className="gl-icon" src={ppl} />
-              See what people are arguing about.
+              Hear what people are arguing about.
             </li>
             <li>
               <img className="gl-icon" src={bubble} />
@@ -24,7 +42,35 @@ class GuestLanding extends Component {
           </ul>
         </div>
 
-        <div id="gl-right"></div>
+        <div id="gl-right">
+          <form id="gl-login">
+            <input
+              type="text"
+              className="gl-login-input"
+              name="username"
+              placeholder="username"
+              onChange={this.handleChange}
+            />
+            <input
+              type="password"
+              className="gl-login-input"
+              name="password"
+              placeholder="password"
+              onChange={this.handleChange}
+            />
+            <input type="submit" value="Log In" id="gl-login-btn" />
+          </form>
+
+          <div id="gl-authbox">
+            <img src={birb} alt="birb" id="gl-birb" />
+            <h1 className="gl-block-text">
+              See what's happening in the world right now
+            </h1>
+            <h3 className="gl-block-text">Sign up for Twidder today.</h3>
+            <button id="gl-authbox-signup-btn">Sign up</button>
+            <button id="gl-authbox-login-btn">Log in</button>
+          </div>
+        </div>
       </div>
     );
   }

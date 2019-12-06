@@ -1,29 +1,120 @@
+#gl-left,
+#gl-right {
+  display: flex;
+  height: 100vh;
+  width: 50vw;
+}
+
 #gl-container {
   display: flex;
   flex-direction: row;
 
   #gl-left {
-    display: flex;
-    justify-content: center;
+    background-image: url("../images/birb-bg.png");
+    background-size: 100% 100%;
     align-items: center;
-    background-color: $blue-bird;
-    height: 100vh;
-    width: 50%;
+    justify-content: center;
 
     #gl-bullets {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: flex-start;
       height: 10em;
+
       li {
         display: flex;
         justify-content: center;
         align-items: center;
         list-style: none;
+        font-family: "Segoe UI", arial, sans-serif;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
 
         .gl-icon {
           height: 2.5em;
+          width: 2.5em;
+          margin-right: 1em;
         }
+      }
+    }
+  }
+
+  #gl-right {
+    flex-direction: column;
+    align-items: center;
+
+    #gl-login {
+      display: flex;
+      justify-content: space-between;
+      height: 2.7em;
+      width: 27.5em;
+      margin-top: 1.1em;
+
+      #gl-login-btn {
+        border-radius: 20px;
+        background-color: #fff;
+        border-style: solid;
+        border-color: $blue-bird;
+        border-width: 1px;
+        width: 4.5em;
+        font-family: $segoe;
+        font-weight: 800;
+        color: $blue-bird;
+      }
+
+      .gl-login-input {
+        background-color: #e8f0fe;
+        border: none;
+        padding-left: 10px;
+      }
+
+      .gl-login-input::placeholder {
+        color: rgb(153, 153, 153);
+        font-family: $segoe;
+      }
+    }
+
+    #gl-authbox {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15%;
+
+      #gl-birb {
+        position: relative;
+        width: 5.5em;
+        align-self: flex-start;
+        margin-right: 20.5em;
+        bottom: -30px;
+      }
+
+      .gl-block-text {
+        width: 13em;
+        text-align: left;
+      }
+
+      #gl-authbox-signup-btn,
+      #gl-authbox-login-btn {
+        height: 2.5em;
+        border-radius: 10em;
+        border-style: solid;
+        font-family: $segoe;
+        font-size: medium;
+        font-weight: bold;
+      }
+
+      #gl-authbox-signup-btn {
+        background-color: $blue-bird;
+        color: #fff;
+        border-color: $blue-bird;
+      }
+
+      #gl-authbox-login-btn {
+        margin-top: 1.3em;
+        border-color: $blue-bird;
+        background-color: #fff;
+        color: $blue-bird;
       }
     }
   }
