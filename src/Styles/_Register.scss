@@ -1,0 +1,42 @@
+#reg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(54, 60, 70);
+
+  #reg-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #15202b;
+    border-radius: 20px;
+    height: 80vh;
+    width: 40em;
+    min-height: 400px;
+    overflow-y: auto;
+
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: 90%;
+      height: 8%;
+      padding-top: 1%;
+
+      img {
+        height: 2em;
+        width: 2.5em;
+      }
+
+      .reg-next-btn {
+        @include blue-btn;
+        height: 3em;
+        width: 7em;
+        font-size: large;
+      }
+    }
+  }
+}

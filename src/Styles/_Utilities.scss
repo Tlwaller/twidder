@@ -1,2 +1,31 @@
+//colors
 $blue-bird: #1da1f2;
+$button-hover: #157cbd;
+
+//fonts
 $segoe: "Segoe UI", arial, sans-serif;
+
+//mixins
+@mixin blue-btn {
+  background-color: $blue-bird;
+  color: #fff;
+  border-color: $blue-bird;
+  font-family: $segoe;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+@mixin white-btn {
+  color: $blue-bird;
+  background-color: #fff;
+  border-color: $blue-bird;
+  font-family: $segoe;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgb(230, 230, 230);
+  }
+}

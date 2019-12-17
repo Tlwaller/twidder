@@ -104,25 +104,13 @@
         font-weight: bold;
       }
 
-      #gl-authbox-signup-btn:hover {
-        background-color: #157cbd;
-      }
-
-      #gl-authbox-login-btn:hover {
-        background-color: rgb(230, 230, 230);
-      }
-
       #gl-authbox-signup-btn {
-        background-color: $blue-bird;
-        color: #fff;
-        border-color: $blue-bird;
+        @include blue-btn;
       }
 
       #gl-authbox-login-btn {
+        @include white-btn;
         margin-top: 1.3em;
-        border-color: $blue-bird;
-        background-color: #fff;
-        color: $blue-bird;
       }
     }
   }
