@@ -3,6 +3,7 @@ import eyeglass from "../images/eyeglass.png";
 import ppl from "../images/ppl.png";
 import bubble from "../images/bubble.png";
 import birb from "../images/birb.png";
+import { Link } from "react-router-dom";
 
 class GuestLanding extends Component {
   constructor(props) {
@@ -15,12 +16,7 @@ class GuestLanding extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(e.target.name + ": " + this.state[e.target.name]);
   };
-
-  // login = () => {
-
-  // }
 
   render() {
     return (
@@ -66,9 +62,13 @@ class GuestLanding extends Component {
             <h1 className="gl-block-text">
               See what's happening in the world right now
             </h1>
-            <h3 className="gl-block-text">Sign up for Twidder today.</h3>
-            <button id="gl-authbox-signup-btn">Sign up</button>
-            <button id="gl-authbox-login-btn">Log in</button>
+            <h3 className="gl-block-text">Join Twidder today.</h3>
+            <Link to="/register" id="gl-authbox-signup-btn">
+              Sign up
+            </Link>
+            <Link to="/login" id="gl-authbox-login-btn">
+              Log in
+            </Link>
           </div>
         </div>
       </div>
