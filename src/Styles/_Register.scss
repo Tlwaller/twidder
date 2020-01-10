@@ -45,10 +45,15 @@
       }
     }
 
-    form {
+    .reg-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      width: 35em;
       #reg-title {
         text-align: left;
-        color: rgb(230, 230, 230);
+        color: whitesmoke;
       }
       .reg-label {
         display: flex;
@@ -65,7 +70,7 @@
         .reg-input {
           background: none;
           border: none;
-          color: rgb(230, 230, 230);
+          color: whitesmoke;
           width: 100%;
           height: 80%;
           font-size: 100%;
@@ -80,5 +85,34 @@
         }
       }
     }
+    #reg-date-form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      #reg-month-drop {
+        // width: 15em;
+      }
+      .reg-dropdown {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+#reg-date-desc {
+  position: relative;
+  right: 6.4em;
+  text-align: left;
+  h3 {
+    color: whitesmoke;
+  }
+  p {
+    color: #8899a6;
   }
 }
