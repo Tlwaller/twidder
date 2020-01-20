@@ -13,8 +13,7 @@
     align-items: center;
     background-color: #15202b;
     border-radius: 20px;
-    height: 80vh;
-    width: 40em;
+    // height: 35em;
     min-height: 400px;
     overflow-y: auto;
     padding-bottom: 5em;
@@ -25,7 +24,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      width: 37em;
+      width: 96%;
       padding-top: 1em;
 
       #reg-head-spacer {
@@ -52,11 +51,16 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-evenly;
-      width: 35em;
+      width: 90%;
       #reg-title {
         text-align: left;
         color: whitesmoke;
       }
+
+      #reg-un {
+        width: 100%;
+      }
+
       .reg-label {
         display: flex;
         flex-direction: column;
@@ -65,7 +69,6 @@
         padding-right: 0px;
         color: #8899a6;
         background-color: #192734;
-        width: 35em;
         height: 3em;
         border-bottom: 2px solid;
         border-radius: 3px;
@@ -95,24 +98,12 @@
 
       #reg-passwords {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100.8%;
-        .reg-label {
-          width: 47%;
-        }
+        
       }
     }
     #reg-date-form {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      #reg-month-drop {
-        width: 15em;
-      }
-      #reg-day-drop, #reg-year-drop {
-        width: 8em;
-      }
+
       .reg-dropdown {
         width: 100%;
         height: 100%;
@@ -130,12 +121,64 @@
 
 #reg-date-desc {
   position: relative;
-  right: 6.4em;
+  // right: 6.4em;
+  align-self: flex-start;
+  padding-left: 5%;
   text-align: left;
+  width: 50%;
   h3 {
     color: whitesmoke;
   }
   p {
     color: #8899a6;
+  }
+}
+
+@media(max-width: 766px) {
+  #reg-box {
+    width: 83vw;
+    height: 85vh;
+    #reg-passwords {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    #reg-date-form {
+      flex-direction: column;
+    }
+
+    #reg-day-drop, #reg-year-drop, #reg-month-drop {
+      width: 100%;
+    }
+  }
+}
+
+@media(min-width: 767px) {
+  #reg-box {
+    width: 40em;
+  }
+
+  #reg-passwords {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    input {
+      width: 47%;
+    }
+    .reg-label {
+      width: 47%;
+    }
+  }
+
+  #reg-date-form {
+    flex-direction: row;
+    justify-content: space-between;
+    #reg-month-drop {
+      width: 15em;
+    }
+    #reg-day-drop, #reg-year-drop {
+      width: 25%;
+    }
   }
 }

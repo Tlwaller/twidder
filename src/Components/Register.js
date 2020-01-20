@@ -16,7 +16,6 @@ class Register extends Component {
 
   handleInput = e => {
     this.setState({[e.target.name]: e.target.value});
-    alert([e.target.name] + ' is now ' + this.state[e.target.name])
   }
 
   render() {
@@ -31,16 +30,16 @@ class Register extends Component {
 
           <form className="reg-form">
             <h1 id="reg-title">Put your stuff in</h1>
-            <label className="reg-label">
+            <label className="reg-label" id='reg-un'>
               Username <input className="reg-input" name='username' onChange={this.handleInput}/>
             </label>
 
             <div id='reg-passwords'>
             <label className="reg-label">
-              Password <input name='pass' className="reg-input" />
+              Password <input name='pass' type='password' className="reg-input" onChange={this.handleInput}/>
             </label>
             <label className="reg-label">
-              Verify password <input name='pass2' className="reg-input" />
+              Verify password <input name='pass2' type='password' className="reg-input" onChange={this.handleInput}/>
             </label>
             </div>
           </form>
@@ -49,7 +48,7 @@ class Register extends Component {
             <h3>Your birthday</h3>
             <p>So we know you're old enough for grown up stuff.</p>
           </div>
-          <form className="reg-form" id="reg-date-form">
+          <form  id="reg-date-form">
             <label className="reg-label" id="reg-month-drop">
               Month
               <select className="reg-dropdown" name='month' onChange={this.handleInput}>
