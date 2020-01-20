@@ -9,13 +9,10 @@
   #reg-box {
     display: flex;
     flex-direction: column;
-    // justify-content: space-evenly;
     align-items: center;
     background-color: #15202b;
-    border-radius: 20px;
-    // height: 35em;
     min-height: 400px;
-    overflow-y: auto;
+    overflow-y: none;
     padding-bottom: 5em;
 
     header {
@@ -45,6 +42,19 @@
         font-weight: 900;
       }
     }
+    .reg-label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 5px;
+      padding-right: 0px;
+      color: #8899a6;
+      background-color: #192734;
+      height: 3em;
+      border-bottom: 2px solid;
+      border-radius: 3px;
+      margin-bottom: 2em;
+    }
 
     .reg-form {
       display: flex;
@@ -60,20 +70,6 @@
       #reg-un {
         width: 100%;
       }
-
-      .reg-label {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 5px;
-        padding-right: 0px;
-        color: #8899a6;
-        background-color: #192734;
-        height: 3em;
-        border-bottom: 2px solid;
-        border-radius: 3px;
-        margin-bottom: 2em;
-
         .reg-input {
           background: none;
           border: none;
@@ -94,7 +90,6 @@
             border-color: $blue-bird;
           }
         }
-      }
 
       #reg-passwords {
         display: flex;
@@ -121,7 +116,6 @@
 
 #reg-date-desc {
   position: relative;
-  // right: 6.4em;
   align-self: flex-start;
   padding-left: 5%;
   text-align: left;
@@ -136,8 +130,8 @@
 
 @media(max-width: 766px) {
   #reg-box {
-    width: 83vw;
-    height: 85vh;
+    width: 100vw;
+    height: 92vh;
     #reg-passwords {
       flex-direction: column;
       justify-content: flex-start;
@@ -147,9 +141,11 @@
     #reg-date-form {
       flex-direction: column;
     }
-
-    #reg-day-drop, #reg-year-drop, #reg-month-drop {
-      width: 100%;
+    #reg-date-form {
+      width: 90%;
+      #reg-day-drop, #reg-year-drop, #reg-month-drop {
+        width: 100%;
+      }
     }
   }
 }
@@ -157,6 +153,7 @@
 @media(min-width: 767px) {
   #reg-box {
     width: 40em;
+    border-radius: 15px;
   }
 
   #reg-passwords {
@@ -174,6 +171,7 @@
   #reg-date-form {
     flex-direction: row;
     justify-content: space-between;
+    width: 90%;
     #reg-month-drop {
       width: 15em;
     }
