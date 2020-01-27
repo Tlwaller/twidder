@@ -10,13 +10,33 @@ class Register extends Component {
       pass2: '',
       month: '',
       day: '',
-      year: ''
+      year: '',
+      isAdult: false
     }
   }
 
   handleInput = e => {
     this.setState({[e.target.name]: e.target.value});
   }
+
+  display30 = () => {
+    if(this.state.month != 'February') {
+      return <option value='30'>30</option>;
+    }
+  }
+
+  display31 = () => {
+    if(this.state.month != 'February' &&
+      this.state.month != 'April' &&
+      this.state.month != 'June' &&
+      this.state.month != 'September' &&
+      this.state.month != 'November' ) {
+        return <option value='31'>31</option>
+    }
+  }
+  // handleSubmit = e => {
+// 
+  // }
 
   render() {
     return (
@@ -48,23 +68,23 @@ class Register extends Component {
             <h3>Your birthday</h3>
             <p>So we know you're old enough for grown up stuff.</p>
           </div>
-          <form  id="reg-date-form">
+          <form id="reg-date-form">
             <label className="reg-label" id="reg-month-drop">
               Month
               <select className="reg-dropdown" name='month' onChange={this.handleInput}>
                 <option value='' disabled selected hidden></option>
                 <option value='January'>January</option>
                 <option value='February'>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
+                <option value='March'>March</option>
+                <option value='April'>April</option>
+                <option value='May'>May</option>
+                <option value='June'>June</option>
+                <option value='July'>July</option>
+                <option value='August'>August</option>
+                <option value='September'>September</option>
+                <option value='October'>October</option>
+                <option value='November'>November</option>
+                <option value='December'>December</option>
               </select>
             </label>
             <label className="reg-label" id="reg-day-drop">
@@ -100,11 +120,8 @@ class Register extends Component {
               <option value='27'>27</option>
               <option value='28'>28</option>
               <option value='29'>29</option>
-              {!this.state.month != 'January' ?
-                null
-                :
-                <option value='30'></option>
-              }
+              {this.display30()}
+              {this.display31()}
               </select>
             </label>
             <label className="reg-label" id="reg-year-drop">
