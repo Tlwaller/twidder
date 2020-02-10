@@ -34,9 +34,6 @@ class Register extends Component {
         return <option value='31'>31</option>
     }
   }
-  // handleSubmit = e => {
-// 
-  // }
 
   render() {
     return (
@@ -66,7 +63,7 @@ class Register extends Component {
 
           <div id="reg-date-desc">
             <h3>Your birthday</h3>
-            <p>So we know you're old enough for grown up stuff.</p>
+            <p>We just wanna know, we won't tell anyone!</p>
           </div>
           <form id="reg-date-form">
             <label className="reg-label" id="reg-month-drop">
