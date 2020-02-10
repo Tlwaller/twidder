@@ -4,7 +4,10 @@ import Axios from "axios";
 const initialState = {
     userid: null,
     username: '',
-    password: ''
+    password: '',
+    month: '',
+    day: 0,
+    year: 0
 };
 
 //constant strings

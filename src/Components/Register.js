@@ -1,22 +1,32 @@
 import React, { Component } from "react";
 import birb from "../images/white-birb.png";
+import { registerUser } from '../Redux/Reducers/UserReducer';
+import { connect } from 'react-redux';
 
 class Register extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       username: '',
       pass: '',
       pass2: '',
       month: '',
-      day: '',
-      year: '',
-      isAdult: false
+      day: 0,
+      year: 0
     }
   }
 
   handleInput = e => {
     this.setState({[e.target.name]: e.target.value});
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const {username, pass, pass2, month, day, year} = this.state;
+
+    if(pass === pass2) {
+      this.props.registerUser({username, pass, month, day, year});
+    }
   }
 
   display30 = () => {
@@ -250,4 +260,10 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = reduxState => {
+  return {
+    userid: reduxState.userReducer.userid
+  }
+}
+
+export default connect(mapStateToProps, { registerUser })(Register);
