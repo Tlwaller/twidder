@@ -261,8 +261,9 @@ class Register extends Component {
 }
 
 const mapStateToProps = reduxState => {
+  console.log(reduxState);
   return {
-    userid: reduxState.userReducer.userid
+    userid: reduxState.userid
   }
 }
 

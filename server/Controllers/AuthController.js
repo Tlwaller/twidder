@@ -10,7 +10,7 @@ module.exports = {
   },
 
   register: async (req, res) => {
-    const { username, password } = req.body;
+    const { username, password, month, day, year } = req.body;
     const db = req.app.get("db");
 
     const foundUser = await db.auth.checkForUsername(username);
@@ -20,7 +20,7 @@ module.exports = {
     } else {
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(password, salt);
-      const newUser = await db.auth.registerUser(username, hash);
+      const newUser = await db.auth.registerUser(username, hash, month, day, year);
 
       req.session.user = {
         userid: newUser[0].userid,
