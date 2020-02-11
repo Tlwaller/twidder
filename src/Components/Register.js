@@ -8,8 +8,8 @@ class Register extends Component {
     super();
     this.state = {
       username: '',
-      pass: '',
-      pass2: '',
+      password: '',
+      password2: '',
       month: '',
       day: 0,
       year: 0
@@ -22,10 +22,10 @@ class Register extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const {username, pass, pass2, month, day, year} = this.state;
+    const {username, password, password2, month, day, year} = this.state;
 
-    if(pass === pass2) {
-      this.props.registerUser({username, pass, month, day, year});
+    if(password === password2) {
+      this.props.registerUser({username, password, month, day, year});
     }
   }
 
@@ -52,7 +52,7 @@ class Register extends Component {
           <header>
             <div id="reg-head-spacer" />
             <img src={birb} alt="birb" />
-            <button className="reg-btn">Register</button>
+            <button className="reg-btn" onClick={this.handleSubmit}>Register</button>
           </header>
 
           <form className="reg-form">
