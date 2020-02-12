@@ -24,15 +24,15 @@ class GuestLanding extends Component {
         <div id="gl-left">
           <ul id="gl-bullets">
             <li>
-              <img className="gl-icon" src={eyeglass} />
+              <img className="gl-icon" src={eyeglass} alt='eyeglass'/>
               Follow yo interests.
             </li>
             <li>
-              <img className="gl-icon" src={ppl} />
+              <img className="gl-icon" src={ppl} alt='people'/>
               Hear what people are arguing about.
             </li>
             <li>
-              <img className="gl-icon" src={bubble} />
+              <img className="gl-icon" src={bubble} alt='speech bubble'/>
               Argue with other people.
             </li>
           </ul>

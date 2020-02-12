@@ -12,35 +12,48 @@ class Register extends Component {
       password2: '',
       month: '',
       day: 0,
-      year: 0
+      year: 0,
+      done: 'incomplete'
     }
   }
 
+  //changes state according to user input
   handleInput = e => {
+    const {username, password, password2, month, day, year} = this.state;
     this.setState({[e.target.name]: e.target.value});
+    if(username && password && password2 && month && day && year) {
+      this.setState({done: 'complete'});
+      console.log('hit');
+    } else {
+      this.setState({done: 'incomplete'});
+      console.log('miss');
+    };
   }
 
+  //checks if all fields are filled and passwords match before registering
   handleSubmit = e => {
     e.preventDefault();
     const {username, password, password2, month, day, year} = this.state;
-
-    if(password === password2) {
-      this.props.registerUser({username, password, month, day, year});
-    }
+      if(password === password2) {
+        this.props.registerUser({username, password, month, day, year});
+        this.setState({done: 'complete'});
+      } else {this.setState({done: 'incomplete'});};
   }
 
+  //only display 30th day on proper months
   display30 = () => {
-    if(this.state.month != 'February') {
+    if(this.state.month !== 'February') {
       return <option value='30'>30</option>;
     }
   }
 
+  //only display 31st day on proper months
   display31 = () => {
-    if(this.state.month != 'February' &&
-      this.state.month != 'April' &&
-      this.state.month != 'June' &&
-      this.state.month != 'September' &&
-      this.state.month != 'November' ) {
+    if(this.state.month !== 'February' &&
+      this.state.month !== 'April' &&
+      this.state.month !== 'June' &&
+      this.state.month !== 'September' &&
+      this.state.month !== 'November' ) {
         return <option value='31'>31</option>
     }
   }
@@ -52,7 +65,13 @@ class Register extends Component {
           <header>
             <div id="reg-head-spacer" />
             <img src={birb} alt="birb" />
-            <button className="reg-btn" onClick={this.handleSubmit}>Register</button>
+            {this.state.done === false ? <h5 className='reg-err-txt'>Please correct the errors below</h5> : null}
+            <button 
+            className="reg-btn" 
+            id={this.state.done}
+            onClick={this.handleSubmit}
+            disabled={!this.state.done === 'complete' ? false : true}
+            >Register</button>
           </header>
 
           <form className="reg-form">
@@ -63,10 +82,10 @@ class Register extends Component {
 
             <div id='reg-passwords'>
             <label className="reg-label">
-              Password <input name='pass' type='password' className="reg-input" onChange={this.handleInput}/>
+              Password <input name='password' type='password' className="reg-input" onChange={this.handleInput}/>
             </label>
             <label className="reg-label">
-              Verify password <input name='pass2' type='password' className="reg-input" onChange={this.handleInput}/>
+              Verify password <input name='password2' type='password' className="reg-input" onChange={this.handleInput}/>
             </label>
             </div>
           </form>
@@ -133,7 +152,7 @@ class Register extends Component {
             </label>
             <label className="reg-label" id="reg-year-drop">
               Year
-              <select className="reg-dropdown" name='year' onChange={this.handleInput}>
+              <select className="reg-dropdown" name='year' onInput={this.handleInput}>
                 <option value='' disabled selected hidden></option>
                 <option value="2020">2020</option>
                 <option value="2019">2019</option>

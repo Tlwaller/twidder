@@ -31,8 +31,20 @@
       img {
         height: 1.4em;
       }
+      
+      #incomplete {
+        @include blue-btn;
+        background-color: #157ab9be;
+        color: rgba(245, 245, 245, 0.555);
+        height: 2.5em;
+        width: 5em;
+        border-style: none;
+        border-radius: 30px;
+        font-size: small;
+        font-weight: 900;
+      }
 
-      .reg-btn {
+      #complete {
         @include blue-btn;
         height: 2.5em;
         width: 5em;
@@ -41,6 +53,7 @@
         font-size: small;
         font-weight: 900;
       }
+
     }
     .reg-label {
       display: flex;
