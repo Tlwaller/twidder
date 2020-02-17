@@ -31,8 +31,8 @@
       img {
         height: 1.4em;
       }
-      
-      #incomplete {
+
+      #incomplete, #password {
         @include blue-btn;
         background-color: #157ab9be;
         color: rgba(245, 245, 245, 0.555);
@@ -83,31 +83,40 @@
       #reg-un {
         width: 100%;
       }
-        .reg-input {
-          background: none;
-          border: none;
-          color: whitesmoke;
-          width: 100%;
-          height: 80%;
-          font-size: 100%;
-        }
+      .reg-input {
+        background: none;
+        border: none;
+        color: whitesmoke;
+        width: 100%;
+        height: 80%;
+        font-size: 100%;
+      }
 
-        .reg-label:hover {
-          color: $blue-bird;
+      .reg-label:hover {
+        color: $blue-bird;
+        border-color: $blue-bird;
+      }
+
+      .reg-input:focus {
+        outline: none;
+
+        .reg-label {
           border-color: $blue-bird;
         }
-
-        .reg-input:focus {
-          outline: none;
-
-          .reg-label {
-            border-color: $blue-bird;
-          }
-        }
+      }
 
       #reg-passwords {
         display: flex;
         
+      }
+
+      #incomplete, #complete {
+        display: none;
+      }
+
+      #password {
+        position: relative;
+        color: red;
       }
     }
     #reg-date-form {

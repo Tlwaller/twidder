@@ -13,21 +13,26 @@ class Register extends Component {
       month: '',
       day: 0,
       year: 0,
-      done: 'incomplete'
+      status: 'incomplete'
     }
   }
 
   //changes state according to user input
   handleInput = e => {
-    const {username, password, password2, month, day, year} = this.state;
-    this.setState({[e.target.name]: e.target.value});
-    if(username && password && password2 && month && day && year) {
-      this.setState({done: 'complete'});
-      console.log('hit');
-    } else {
-      this.setState({done: 'incomplete'});
-      console.log('miss');
-    };
+    // const {username, password, password2, month, day, year} = this.state;
+    this.setState({[e.target.name]: e.target.value}, () => {
+      if((this.state.username && this.state.password && this.state.password2 && this.state.month && this.state.day && this.state.year)) {
+        if(this.state.password === this.state.password2) {
+          this.setState({status: 'complete'});
+          console.log('hit');
+        } else this.setState({status: 'password'});
+        
+      } else {
+        this.setState({status: 'incomplete'});
+        console.log('miss');
+      };
+    });
+    
   }
 
   //checks if all fields are filled and passwords match before registering
@@ -36,8 +41,8 @@ class Register extends Component {
     const {username, password, password2, month, day, year} = this.state;
       if(password === password2) {
         this.props.registerUser({username, password, month, day, year});
-        this.setState({done: 'complete'});
-      } else {this.setState({done: 'incomplete'});};
+        this.setState({status: 'complete'});
+      } else {this.setState({status: 'incomplete'});};
   }
 
   //only display 30th day on proper months
@@ -65,12 +70,12 @@ class Register extends Component {
           <header>
             <div id="reg-head-spacer" />
             <img src={birb} alt="birb" />
-            {this.state.done === false ? <h5 className='reg-err-txt'>Please correct the errors below</h5> : null}
+            {this.state.status === false ? <h5 className='reg-err-txt'>Please correct the errors below</h5> : null}
             <button 
             className="reg-btn" 
-            id={this.state.done}
+            id={this.state.status}
             onClick={this.handleSubmit}
-            disabled={!this.state.done === 'complete' ? false : true}
+            disabled={!this.state.status === 'complete' ? false : true}
             >Register</button>
           </header>
 
@@ -88,6 +93,7 @@ class Register extends Component {
               Verify password <input name='password2' type='password' className="reg-input" onChange={this.handleInput}/>
             </label>
             </div>
+            <h5 id={this.state.status}>These passwords don't event match!!!</h5>
           </form>
 
           <div id="reg-date-desc">
@@ -152,7 +158,7 @@ class Register extends Component {
             </label>
             <label className="reg-label" id="reg-year-drop">
               Year
-              <select className="reg-dropdown" name='year' onInput={this.handleInput}>
+              <select className="reg-dropdown" name='year' onChange={this.handleInput}>
                 <option value='' disabled selected hidden></option>
                 <option value="2020">2020</option>
                 <option value="2019">2019</option>
@@ -280,7 +286,6 @@ class Register extends Component {
 }
 
 const mapStateToProps = reduxState => {
-  console.log(reduxState);
   return {
     userid: reduxState.userid
   }
