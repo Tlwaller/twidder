@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import birb from "../images/white-birb.png";
 import { registerUser } from '../Redux/Reducers/UserReducer';
 import { connect } from 'react-redux';
+import { Redirect } from "react-router-dom";
 
 class Register extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       username: '',
@@ -24,12 +25,10 @@ class Register extends Component {
       if((this.state.username && this.state.password && this.state.password2 && this.state.month && this.state.day && this.state.year)) {
         if(this.state.password === this.state.password2) {
           this.setState({status: 'complete'});
-          console.log('hit');
         } else this.setState({status: 'password'});
         
       } else {
         this.setState({status: 'incomplete'});
-        console.log('miss');
       };
     });
     
@@ -39,8 +38,9 @@ class Register extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const {username, password, password2, month, day, year} = this.state;
+    const {registerUser} = this.props;
       if(password === password2) {
-        this.props.registerUser({username, password, month, day, year});
+        registerUser({username, password, month, day, year});
         this.setState({status: 'complete'});
       } else {this.setState({status: 'incomplete'});};
   }
@@ -64,6 +64,9 @@ class Register extends Component {
   }
 
   render() {
+    if(this.props.userid) {
+      return <Redirect to='/home'/>
+    }
     return (
       <div id="reg-container">
         <div id="reg-box">
@@ -75,7 +78,7 @@ class Register extends Component {
             className="reg-btn" 
             id={this.state.status}
             onClick={this.handleSubmit}
-            disabled={!this.state.status === 'complete' ? false : true}
+            disabled={!this.state.status === 'complete' ? true : false}
             >Register</button>
           </header>
 
@@ -287,7 +290,7 @@ class Register extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    userid: reduxState.userid
+    userid: reduxState.userReducer.userid
   }
 }
 

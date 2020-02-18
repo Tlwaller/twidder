@@ -1,6 +1,5 @@
 import Axios from "axios";
 
-//initial state
 const initialState = {
     userid: null,
     username: '',
@@ -49,13 +48,30 @@ export function logoutUser() {
 export default function reducer(state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
-        case `${GET_SESSION}_FULFILLED` || `${LOGIN_USER}_FULFILLED` || `${REGISTER_USER}_FULFILLED`:
+        case `${GET_SESSION}_FULFILLED`:
             return {
                 ...state,
                 userid: payload.data.userid,
                 username: payload.data.username,
                 password: payload.data.password
             };
+        
+        case `${REGISTER_USER}_FULFILLED`:
+            return {
+                ...state,
+                userid: payload.data.userid,
+                username: payload.data.username,
+                password: payload.data.password
+            };
+        
+        case `${LOGIN_USER}_FULFILLED`:
+            return {
+                ...state,
+                userid: payload.data.userid,
+                username: payload.data.username,
+                password: payload.data.password
+            };
+        
         case `${LOGOUT_USER}_FULFILLED`:
             return {
                 ...state,
