@@ -11,7 +11,8 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      status: 'incomplete'
+      status: 'incomplete',
+      error: 'login-ok'
     }
   }
 
@@ -29,7 +30,7 @@ class Login extends Component {
     e.preventDefault();
     const { username, password } = this.state;
     const { loginUser } = this.props;
-    loginUser({username, password}); 
+    loginUser({username, password}).catch(err => this.setState({error: 'login-error'}))
   }
 
   render() {
@@ -49,6 +50,7 @@ class Login extends Component {
           <label className='login-label'>Password
             <input className='login-input' type='password' name='password' onChange={this.handleInput}/>
           </label>
+          <h5 id={this.state.error}>That username/password doesn't sound right!</h5>
           <button id='login-btn'
           onClick={this.handleSubmit}
           className={this.state.status === 'complete' ? 'enabled' : 'disabled'}
