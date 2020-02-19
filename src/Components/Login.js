@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import birb from '../images/white-birb.png';
 import { Link } from 'react-router-dom';
+import { loginUser } from '../Redux/Reducers/UserReducer'
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Login extends Component {
   constructor() {
@@ -13,19 +16,26 @@ class Login extends Component {
   }
 
   handleInput = e => {
-    this.setState({[e.target.name] : e.target.value})
+    this.setState({[e.target.name] : e.target.value}, () => {
+      if(this.state.username && this.state.password) {
+        this.setState({status : 'complete'});
+      } else this.setState({status : 'incomplete'});
+    })
 
-    if(this.state.username && this.state.password) {
-      this.setState({status : 'complete'});
-    } else this.setState({status : 'incomplete'});
+    
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    alert('hit')
+    const { username, password } = this.state;
+    const { loginUser } = this.props;
+    loginUser({username, password}); 
   }
 
   render() {
+    if(this.props.userid) {
+      return <Redirect to='/home'/>
+    }
     return (
     <div id='login-bg'>
       <div id='login-container'>
@@ -52,4 +62,11 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = reduxState => {
+  return {
+    userid: reduxState.userReducer.userid
+  }
+
+}
+
+export default connect(mapStateToProps, { loginUser })(Login);
