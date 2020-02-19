@@ -3,6 +3,28 @@ import birb from '../images/white-birb.png';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: '',
+      status: 'incomplete'
+    }
+  }
+
+  handleInput = e => {
+    this.setState({[e.target.name] : e.target.value})
+
+    if(this.state.username && this.state.password) {
+      this.setState({status : 'complete'});
+    } else this.setState({status : 'incomplete'});
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    alert('hit')
+  }
+
   render() {
     return (
     <div id='login-bg'>
@@ -12,12 +34,15 @@ class Login extends Component {
 
         <form id='login-form'>
           <label className='login-label'>Username
-            <input className='login-input' type='text' name='username'/>
+            <input className='login-input' type='text' name='username' onChange={this.handleInput}/>
           </label>
           <label className='login-label'>Password
-            <input className='login-input' type='password' name='password'/>
+            <input className='login-input' type='password' name='password' onChange={this.handleInput}/>
           </label>
-          <button id='login-btn' >Log in</button>
+          <button id='login-btn'
+          onClick={this.handleSubmit}
+          className={this.state.status === 'complete' ? 'enabled' : 'disabled'}
+          disabled={this.state.status === 'complete' ? false : true}>Log in</button>
         </form>
 
         <Link id='register-link' to='/register'>Sign up for Twidder</Link>

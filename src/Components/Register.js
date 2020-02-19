@@ -78,7 +78,7 @@ class Register extends Component {
             className="reg-btn" 
             id={this.state.status}
             onClick={this.handleSubmit}
-            disabled={!this.state.status === 'complete' ? true : false}
+            disabled={this.state.status === 'complete' ? false : true}
             >Register</button>
           </header>
 

@@ -55,11 +55,19 @@
                 height: 3.2em;
                 width: 97%;
                 border-radius: 200px;
-                background-color: $blue-bird;
                 border-style: none;
                 font-size: 11pt;
                 font-weight: 700;
+            }
+
+            .enabled {
+                background-color: $blue-bird;
                 color: whitesmoke;
+            }
+
+            .disabled {
+                background-color: #157ab9be;
+                color: rgba(245, 245, 245, 0.555);
             }
         }
 
