@@ -92,7 +92,7 @@
         font-size: 100%;
       }
 
-      .reg-label:hover {
+      .reg-label:focus-within {
         color: $blue-bird;
         border-color: $blue-bird;
       }
