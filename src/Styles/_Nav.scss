@@ -1,0 +1,42 @@
+#navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $blue-bird;
+    position: absolute;
+    width: 25%;
+    background-color: $dark-bg;
+
+    #nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 10em;
+        list-style: none;
+        
+        .nav-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 3em;
+            width: 80%;
+            color: whitesmoke;
+            border-radius: 20px;
+            img {
+                height: 1.5em;
+            }
+        }
+    }
+}
+
+@media(max-device-aspect-ratio: 16/9) {
+    #navbar {
+        align-items: flex-end;
+    }
+}
+
+@media(min-device-aspect-ratio: 16/9) {
+    #navbar {
+        align-items: center;
+    }
+}

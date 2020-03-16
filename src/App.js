@@ -4,7 +4,7 @@ import Routes from "./Routes";
 import "./Styles/Main.scss";
 
 function App() {
-  return <div className="App">{Routes}</div>;
+    return <div className="App">{Routes}</div>
 }
 
 export default App;

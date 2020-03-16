@@ -1,6 +1,7 @@
 //colors
 $blue-bird: #1da1f2;
 $button-hover: #157cbd;
+$dark-bg: #15202b;
 
 //fonts
 $segoe: "Segoe UI", arial, sans-serif;
@@ -28,4 +29,9 @@ $segoe: "Segoe UI", arial, sans-serif;
   &:hover {
     background-color: rgb(230, 230, 230);
   }
+}
+
+.white-birb {
+  height: 1.5em;
+  width: 1.5em;
 }

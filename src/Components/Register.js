@@ -72,7 +72,7 @@ class Register extends Component {
         <div id="reg-box">
           <header>
             <div id="reg-head-spacer" />
-            <img src={birb} alt="birb" />
+            <img className='white-birb' src={birb} alt="birb" />
             {this.state.status === false ? <h5 className='reg-err-txt'>Please correct the errors below</h5> : null}
             <button 
             className="reg-btn" 
@@ -106,8 +106,8 @@ class Register extends Component {
           <form id="reg-date-form">
             <label className="reg-label" id="reg-month-drop">
               Month
-              <select className="reg-dropdown" name='month' onChange={this.handleInput}>
-                <option value='' disabled selected hidden></option>
+              <select className="reg-dropdown" name='month' onChange={this.handleInput} defaultValue=''>
+                <option value='' disabled hidden></option>
                 <option value='January'>January</option>
                 <option value='February'>February</option>
                 <option value='March'>March</option>
@@ -124,8 +124,8 @@ class Register extends Component {
             </label>
             <label className="reg-label" id="reg-day-drop">
               Day
-              <select className="reg-dropdown" name='day' onChange={this.handleInput}>
-              <option value='' disabled selected hidden></option>
+              <select className="reg-dropdown" name='day' onChange={this.handleInput} defaultValue=''>
+              <option value='' disabled hidden></option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -161,8 +161,8 @@ class Register extends Component {
             </label>
             <label className="reg-label" id="reg-year-drop">
               Year
-              <select className="reg-dropdown" name='year' onChange={this.handleInput}>
-                <option value='' disabled selected hidden></option>
+              <select className="reg-dropdown" name='year' onChange={this.handleInput} defaultValue=''>
+                <option value='' disabled hidden></option>
                 <option value="2020">2020</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>

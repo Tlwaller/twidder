@@ -28,10 +28,6 @@
         width: 5.5em;
       }
 
-      img {
-        height: 1.4em;
-      }
-
       #incomplete, #password {
         @include blue-btn;
         background-color: #157ab9be;
