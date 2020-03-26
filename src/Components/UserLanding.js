@@ -11,7 +11,6 @@ class UserLanding extends Component {
         // }
         return (
             <div id='ul-container'>
-                <Nav/>
             </div>
         )
     }
