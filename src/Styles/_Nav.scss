@@ -4,9 +4,13 @@
     align-items: flex-start;
     height: 100vh;
     background-color: $blue-bird;
-    position: absolute;
+    position: fixed;
     width: 25%;
     background-color: $dark-bg;
+
+    #nav-bird {
+        margin-left: 1em;
+    }
 
     #nav-list {
         display: flex;
@@ -46,10 +50,14 @@
         }
 
         #nav-tweed-btn {
-            height: 4em;
+            height: 3.5em;
+            width: 90%;
             background-color: $blue-bird;
             border: none;
             border-radius: 999px;
+            color: white;
+            font-size: 10pt;
+            font-weight: 750;
         }
     }
 }

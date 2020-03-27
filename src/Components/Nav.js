@@ -60,11 +60,12 @@ export default function Nav() {
          lists = <img src={list} alt='lists'/>
     };
 
+    if((location.pathname !== '/') && (location.pathname !== '/login') && (location.pathname !== '/register')) {
     return (
         <div id='navbar' >
             <div id='nav-list'>
-            <img className='white-birb' src={birb} alt='birb'/>
-                <Link to='/home' className='nav-item' style={{ textDecoration: 'none' }}>
+            <img className='white-birb' id='nav-bird' src={birb} alt='birb'/>
+                <Link to='/home' className='nav-item'>
                     {home}
                     Home
                 </Link>
@@ -98,5 +99,5 @@ export default function Nav() {
                 <button id='nav-tweed-btn'>Tweed</button>
             </div>
         </div>
-    )
+    )} else return null;
 }
