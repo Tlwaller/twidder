@@ -9,14 +9,14 @@
     background-color: $dark-bg;
 
     #nav-bird {
-        margin-left: 1em;
+        margin: .7em;
     }
 
     #nav-list {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        height: 68%;
+        height: 75%;
         width: 80%;
         
         .nav-item {
@@ -25,7 +25,6 @@
             width: fit-content;
             padding: .5em;
             background-color: rgba(255, 255, 255, 0);
-            font-weight: 900;
             font-size: medium;
             color: whitesmoke;
             border-radius: 999px;
@@ -36,7 +35,12 @@
             
             img {
                 height: 1.5em;
+                width: 1.5em;
                 padding-right: 1em;
+            }
+
+            b {
+                font-weight: 900;
             }
 
         }
@@ -52,7 +56,7 @@
         #nav-tweed-btn {
             height: 3.5em;
             width: 90%;
-            background-color: $blue-bird;
+            // background-color: $blue-bird;
             border: none;
             border-radius: 999px;
             color: white;
@@ -62,19 +66,46 @@
     }
 }
 
-@media(max-device-aspect-ratio: 16/9) {
+@media(max-width: 768px) {
     #navbar {
-        padding-left: 2em;
-        align-items: flex-start;
+        padding-left: 1em;
+        padding-right: 1em;
+        align-items: center;
 
-        #navlist {
-            align-items: flex-start;
+        #nav-list {
+            align-items: center;
+            width: fit-content;
+
+            .nav-item {
+                width: 1em;
+                b {
+                    display: none;
+                }
+            }
+
+            #nav-tweed-btn {
+                background-color: rgba(255, 255, 255, 0);
+                img {
+                    height: 3.5em;
+                }
+
+                b {
+                    display: none;
+                }
+            }
         }
     }
 }
 
-@media(min-device-aspect-ratio: 16/9) {
+@media(min-width: 768px) {
     #navbar {
-        align-items: center;
+        padding-left: 1.5em;
+    }
+
+    #nav-tweed-btn {
+        background-color: $blue-bird;
+        img {
+            display: none;
+        }
     }
 }

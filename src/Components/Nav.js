@@ -14,6 +14,8 @@ import bluBookmark from '../images/icons/blu bookmark.png'
 import list from '../images/icons/list.png';
 import bluList from '../images/icons/blu list.png'
 import more from '../images/icons/more.png';
+import propic from '../images/icons/profile pic.png';
+import quill from '../images/icons/quill.png';
 
 export default function Nav() {
     let location = useLocation();
@@ -65,38 +67,42 @@ export default function Nav() {
         <div id='navbar' >
             <div id='nav-list'>
             <img className='white-birb' id='nav-bird' src={birb} alt='birb'/>
-                <Link to='/home' className='nav-item'>
+                <Link to='/home' className='nav-item' text='Home'>
                     {home}
-                    Home
+                    <b>Home</b>
                 </Link>
                 <Link to='/explore' className='nav-item'>
                     {explore}
-                    Explore
+                    <b>Explore</b>
                 </Link>
                 <Link to='/notifications' className='nav-item'>
                     {notifications}
-                    Notifications
+                    <b>Notifications</b>
                 </Link>
                 <Link to='/messages' className='nav-item'>
                     {messages}
-                    Messages
+                    <b>Messages</b>
                 </Link>
                 <Link to='/bookmarks' className='nav-item'>
                     {bookmarks}
-                    Bookmarks
+                    <b>Bookmarks</b>
                 </Link>
                 <Link to='/lists' className='nav-item'>
                     {lists}
-                    Lists
+                    <b>Lists</b>
                 </Link>
                 <Link to='/myprofile' className='nav-item'>
-                    Profile
+                    <img src={propic} alt='your profile'/>
+                    <b>Profile</b>
                 </Link>
-                <button className='nav-item'>
+                <Link className='nav-item'>
                     <img src={more} alt='more' />
-                    More
+                    <b>More</b>
+                </Link>
+                <button id='nav-tweed-btn'>
+                    <img src={quill} alt='new tweed'/>
+                    <b>Tweed</b>
                 </button>
-                <button id='nav-tweed-btn'>Tweed</button>
             </div>
         </div>
     )} else return null;

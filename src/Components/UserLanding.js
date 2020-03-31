@@ -6,9 +6,9 @@ import { getSession } from '../Redux/Reducers/UserReducer';
 
 class UserLanding extends Component {
     render() {
-        if(!this.props.userid) {
-            return <Redirect to='/'/>
-        }
+        // if(!this.props.userid) {
+        //     return <Redirect to='/'/>
+        // }
         return (
             <div id='ul-container'>
             </div>
