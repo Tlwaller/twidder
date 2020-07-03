@@ -3,7 +3,7 @@ import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import GuestLanding from "./Components/GuestLanding";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
-import UserLanding from './Components/UserLanding';
+import UserLanding from './Components/Home/UserLanding';
 import Explore from './Components/Explore';
 import Notifications from './Components/Notifications';
 import Messages from './Components/Messages';

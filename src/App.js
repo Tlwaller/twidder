@@ -6,10 +6,10 @@ import "./Styles/Main.scss";
 
 function App() {
     return (
-        <>
+        <div className="App">
         <Nav/>
-        <div className="App">{Routes}</div>
-        </>
+        <div className="routes">{Routes}</div>
+        </div>
     )
 }
 

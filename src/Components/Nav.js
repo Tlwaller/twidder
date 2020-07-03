@@ -91,7 +91,7 @@ export default function Nav() {
                     {lists}
                     <b>Lists</b>
                 </Link>
-                <Link to='/myprofile' className='nav-item'>
+                <Link to='/myprofile' className='nav-item' id='nav-profile'>
                     <img src={propic} alt='your profile'/>
                     <b>Profile</b>
                 </Link>

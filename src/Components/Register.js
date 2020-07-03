@@ -101,7 +101,7 @@ class Register extends Component {
 
           <div id="reg-date-desc">
             <h3>Your birthday</h3>
-            <p>We just wanna know, we won't tell anyone!</p>
+            <p>We just wanna know how old you are, we won't tell anyone!</p>
           </div>
           <form id="reg-date-form">
             <label className="reg-label" id="reg-month-drop">

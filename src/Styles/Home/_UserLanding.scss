@@ -1,0 +1,30 @@
+#ul-container {
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-bg;
+    width: 46vw;
+    height: 100vh;
+    white-space: nowrap;
+    overflow-y: auto;
+
+    .ul-title-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3em;
+        width: 100%;
+        border-bottom: 1px solid $border;
+
+        .ul-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            height: 2em;
+            width: 90%;
+            // padding: 0em 1em 0em 1em;
+        }
+    }
+
+    
+}
