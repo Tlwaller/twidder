@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import birb from "../images/white-birb.png";
+import { whiteBirb } from "../Images";
 import { registerUser } from '../Redux/Reducers/UserReducer';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
@@ -72,7 +72,7 @@ class Register extends Component {
         <div id="reg-box">
           <header>
             <div id="reg-head-spacer" />
-            <img className='white-birb' src={birb} alt="birb" />
+            <img className='white-irb' src={whiteBirb} alt="white birb" />
             {this.state.status === false ? <h5 className='reg-err-txt'>Please correct the errors below</h5> : null}
             <button 
             className="reg-btn" 

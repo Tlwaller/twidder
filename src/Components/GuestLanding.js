@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import eyeglass from "../images/eyeglass.png";
-import ppl from "../images/ppl.png";
-import bubble from "../images/bubble.png";
-import birb from "../images/birb.png";
 import { Link } from "react-router-dom";
+import { eyeglass, ppl, bubble, birb } from '../Images';
 
 class GuestLanding extends Component {
   constructor(props) {

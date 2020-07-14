@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import birb from '../images/white-birb.png';
+import { whiteBirb } from '../Images';
 import { Link } from 'react-router-dom';
 import { loginUser } from '../Redux/Reducers/UserReducer'
 import { Redirect } from 'react-router-dom';
@@ -40,7 +40,7 @@ class Login extends Component {
     return (
     <div id='login-bg'>
       <div id='login-container'>
-        <img src={birb} alt='birb' style={{height: 30 + 'px'}, {width: 30 + 'px'}}/>
+        <img src={whiteBirb} alt='white birb' style={{height: 30 + 'px'}, {width: 30 + 'px'}}/>
         <h2>Log in to Twidder!</h2>
 
         <form id='login-form'>

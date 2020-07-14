@@ -1,21 +1,7 @@
 import React from 'react'
 import { useLocation, Link } from 'react-router-dom';
-import birb from '../images/white-birb.png';
-import house from '../images/icons/lil house.png';
-import bluHouse from '../images/icons/lil blu house.png';
-import hashtag from '../images/icons/hashtag.png';
-import bluHashtag from '../images/icons/blu hashtag.png';
-import bell from '../images/icons/bell.png';
-import bluBell from '../images/icons/blu bell.png';
-import envelope from '../images/icons/envelope.png';
-import bluEnvelope from '../images/icons/blu envelope.png';
-import bookmark from '../images/icons/bookmark.png';
-import bluBookmark from '../images/icons/blu bookmark.png'
-import list from '../images/icons/list.png';
-import bluList from '../images/icons/blu list.png'
-import more from '../images/icons/more.png';
-import propic from '../images/icons/profile pic.png';
-import quill from '../images/icons/quill.png';
+import { whiteBirb, house, bluHouse, hashtag, bluHashtag, bell, bluBell, envelope,
+    bluEnvelope, bookmark, bluBookmark, list, bluList, more, propic, quill } from '../Images.js';
 
 export default function Nav() {
     let location = useLocation();
@@ -66,7 +52,7 @@ export default function Nav() {
     return (
         <div id='navbar' >
             <div id='nav-list'>
-            <img className='white-birb' id='nav-bird' src={birb} alt='birb'/>
+            <img className='white-birb' id='nav-bird' src={whiteBirb} alt='white birb'/>
                 <Link to='/home' className='nav-item' text='Home'>
                     {home}
                     <b>Home</b>
