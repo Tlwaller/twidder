@@ -16,13 +16,27 @@
         width: 87%;
         margin: .5em .5em 0em 0em;
 
-        .ht-input {
+        .ht-input, .ht-btns-container > button {
             background-color: rgba(255, 255, 255, 0);
             border-color: rgba(255, 255, 255, 0);
         }
 
         .ht-btns-container {
-            margin-left: .3em;
+            margin-bottom: 1em;
+            .ht-btn-img {
+                height: 1.5em;
+            }
+            .ht-tweed-btn {
+                @include blue-btn;
+                background-color: #1da0f29c;
+                color: rgba(245, 245, 245, 0.5);
+                height: 100%;
+                border-radius: 25px;
+                float: right;
+                margin-right: .5em;
+                font-weight: bold;
+                border: none;
+            }
         }
     }
 }

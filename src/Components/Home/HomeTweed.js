@@ -12,11 +12,11 @@ export default function HomeTweed() {
             <div className='ht-inner-section'>
                 <input className='ht-input' placeholder="What's poppin'?"/>
                 <div className='ht-btns-container'>
-                    <button>img</button>
-                    <button>gif</button>
-                    <button>poll</button>
-                    <button>emoji</button>
-                    <button>schedule</button>
+                    <button><img src={image} className='ht-btn-img'/></button>
+                    <button><img src={gif} className='ht-btn-img'/></button>
+                    <button><img src={poll} className='ht-btn-img'/></button>
+                    <button><img src={emoji} className='ht-btn-img'/></button>
+                    <button><img src={schedule} className='ht-btn-img'/></button>
                     <button className='ht-tweed-btn'>Tweed</button>
                 </div>
             </div>
