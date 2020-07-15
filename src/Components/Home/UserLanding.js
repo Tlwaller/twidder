@@ -1,5 +1,6 @@
 import React from 'react'
 import HomeTweed from './HomeTweed';
+import Tweed from './Tweed';
 // import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getSession } from '../../Redux/Reducers/UserReducer';
@@ -16,8 +17,8 @@ function UserLanding(){
                     <h3>Home</h3>
                 </header>  
             </div>
-            
             <HomeTweed/>
+            <Tweed/>
         </div>
     )
 }

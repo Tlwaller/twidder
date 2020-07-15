@@ -1,7 +1,7 @@
 #ul-container {
     display: flex;
     flex-direction: column;
-    background-color: $dark-bg;
+    background-color: #263341;
     width: 46vw;
     height: 100vh;
     white-space: nowrap;
@@ -11,6 +11,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: $dark-bg;
         height: 3em;
         width: 100%;
         border-bottom: 1px solid $border;

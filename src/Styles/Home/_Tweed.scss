@@ -1,0 +1,57 @@
+.tweed-container {
+    display: flex;
+
+    height: 10em;
+    width: 100%;
+    background-color: $dark-bg;
+
+    transition: background-color .3s;
+
+    .tweed-propic {
+        height: 2.5em;
+        margin: .5em 0em 0em .5em;
+    }
+
+    main, header, hgroup {
+        display: flex;
+    }
+
+    main {
+        width: 100%;
+        // height: 100%;
+        padding: 1em;
+        header {
+            align-items: center;
+            justify-content: space-between;
+            height: 1em;
+            width: 100%;
+
+            hgroup {
+                font-size: 1.1em;
+
+                .tweed-username {
+                    color: white;
+                }
+
+                .tweed-userhandle, .tweed-time, .tweed-dot {
+                    color: $light-txt;
+                    font-weight: 500;
+                    margin-left: .3em;
+                }
+            }
+        }
+
+        .tweed-dropdown-btn {
+            height: min-content;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.tweed-container:hover {
+    background-color: #192734;
+    transition: background-color .3s;
+    cursor: pointer;
+}

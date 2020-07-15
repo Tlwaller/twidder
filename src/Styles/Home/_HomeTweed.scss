@@ -1,9 +1,10 @@
 .ht-container {
     display: flex;
     justify-content: space-between;
+    background-color: $dark-bg;
     height: 7em;
     width: 100%;
-    border-bottom: .6em solid #263341;
+    margin-bottom: .6em;
 
     .ht-propic {
         margin: .5em 0em 0em .5em;
