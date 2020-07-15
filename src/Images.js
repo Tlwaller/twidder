@@ -23,3 +23,4 @@ export const list = require('./images/icons/list.png');
 export const bluList = require('./images/icons/blu list.png')
 export const more = require('./images/icons/more.png');
 export const quill = require('./images/icons/quill.png');
+export const addTweed = require('./images/icons/add tweed.png');

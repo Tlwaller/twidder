@@ -14,7 +14,6 @@ function UserLanding(){
             <div className='ul-title-container'>
                 <header className='ul-title'>
                     <h3>Home</h3>
-                    <h3>stars</h3>
                 </header>  
             </div>
             

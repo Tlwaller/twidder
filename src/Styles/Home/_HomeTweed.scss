@@ -38,7 +38,16 @@
         }
 
         .ht-btns-container {
-            margin-bottom: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4em;
+
+            .ht-right-btns, .ht-left-btns {
+                display: flex;
+                align-items: center;
+                height: 100%;
+            }
 
             .ht-btn:hover {
                 // animation: htHover .3s ease-in-out 0s 1 forwards;
@@ -56,6 +65,11 @@
                     height: 1.5em;
                 }
             }
+
+            // .vl {
+            //     border-left: 1px solid #6B7C8C;
+            //     height: 2em;
+            // }
             
             .ht-tweed-btn-unready {
                 background-color: #1da0f29c;
@@ -66,12 +80,17 @@
                 background-color: #1da0f2;
                 color: rgba(245, 245, 245, 1);
             }
+
+            .ht-tweed-btn-ready:hover {
+                background-color: #1890db;
+                cursor: pointer;
+            }
             
             .ht-tweed-btn-ready, .ht-tweed-btn-unready {
-                height: 100%;
+                height: 2.3em;
+                width: 5em;
+                font-size: medium;
                 border-radius: 25px;
-                float: right;
-                margin-right: .5em;
                 font-weight: bold;
                 border: none;
             }
