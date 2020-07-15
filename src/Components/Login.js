@@ -40,7 +40,7 @@ class Login extends Component {
     return (
     <div id='login-bg'>
       <div id='login-container'>
-        <img src={whiteBirb} alt='white birb' style={{height: 30 + 'px'}, {width: 30 + 'px'}}/>
+        <img src={whiteBirb} alt='white birb' style={{height: 30 + 'px'}}/>
         <h2>Log in to Twidder!</h2>
 
         <form id='login-form'>

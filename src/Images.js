@@ -1,9 +1,9 @@
-export const propic = require( './images/icons/profile pic.png');
-export const image = require( './images/icons/Image.png');
-export const gif = require( './images/icons/gif.png');
-export const poll = require( './images/icons/poll.png');
-export const emoji = require( './images/icons/emoji.png');
-export const schedule = require( './images/icons/schedule.png');
+export const propic = require('./images/icons/profile pic.png');
+export const image = require('./images/icons/Image.png');
+export const gif = require('./images/icons/gif.png');
+export const poll = require('./images/icons/poll.png');
+export const emoji = require('./images/icons/emoji.png');
+export const schedule = require('./images/icons/schedule.png');
 export const eyeglass = require('./images/eyeglass.png');
 export const ppl = require('./images/ppl.png');
 export const bubble = require('./images/bubble.png');

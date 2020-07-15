@@ -16,20 +16,58 @@
         width: 87%;
         margin: .5em .5em 0em 0em;
 
-        .ht-input, .ht-btns-container > button {
+        .ht-input, .ht-btn {
             background-color: rgba(255, 255, 255, 0);
             border-color: rgba(255, 255, 255, 0);
         }
 
+        .ht-input {
+            height: 3em;
+            color: whitesmoke;
+            font-family: system-ui;
+            font-size: 115%;
+            font-weight: 450;
+        }
+
+        .ht-input::placeholder {
+            color: #9096A3;
+        }
+        
+        .ht-input:focus::placeholder {
+            color: #c4c4c4;
+        }
+
         .ht-btns-container {
             margin-bottom: 1em;
-            .ht-btn-img {
-                height: 1.5em;
+
+            .ht-btn:hover {
+                // animation: htHover .3s ease-in-out 0s 1 forwards;
+                background-color: hsla(211, 55%, 40%, 0.3);
+                transition: .3s;
+                cursor: pointer;
             }
-            .ht-tweed-btn {
-                @include blue-btn;
+
+            .ht-btn {
+                height: 2.7em;
+                border-radius: 100px;
+                background-color: hsla(211, 55%, 40%, 0.0);
+                transition: .3s;
+                .ht-btn-img {
+                    height: 1.5em;
+                }
+            }
+            
+            .ht-tweed-btn-unready {
                 background-color: #1da0f29c;
                 color: rgba(245, 245, 245, 0.5);
+            }
+
+            .ht-tweed-btn-ready {
+                background-color: #1da0f2;
+                color: rgba(245, 245, 245, 1);
+            }
+            
+            .ht-tweed-btn-ready, .ht-tweed-btn-unready {
                 height: 100%;
                 border-radius: 25px;
                 float: right;
