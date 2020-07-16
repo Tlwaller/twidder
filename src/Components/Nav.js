@@ -50,12 +50,10 @@ export default function Nav() {
 
     const hover = e => {
         e.target.id = 'hover'
-        console.log(e.target.id);
     }
 
     const leaveHover = e => {
         e.target.id = 'leave'
-        console.log(e.target.id);
     }
 
     if((location.pathname !== '/') && (location.pathname !== '/login') && (location.pathname !== '/register')) {
