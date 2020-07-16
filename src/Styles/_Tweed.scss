@@ -1,0 +1,103 @@
+.tweed-container {
+    display: flex;
+    width: 100%;
+    padding: .5em 0em .5em 0em;
+    background-color: $dark-bg;
+    transition: background-color .3s;
+
+    .tweed-propic {
+        position: absolute;
+        height: 2.5em;
+        margin-left: .7em;
+        align-self: start;
+    }
+
+    main, header, hgroup, footer {
+        display: flex;
+    }
+
+    
+    main {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        color: white;
+        
+        
+        span {
+            width: 75%;
+            margin-top: .3em;
+            font-size: 15px;
+        }
+   
+        header {
+            width: 95%;
+            align-items: center;
+            justify-content: space-between;
+            height: 1em;
+    
+            hgroup {
+                font-size: 1.1em;
+                margin-left: 3em;
+    
+                .tweed-username {
+                    color: white;
+                }
+    
+                .tweed-userhandle, .tweed-time, .tweed-dot {
+                    color: $light-txt;
+                    font-weight: 500;
+                    margin-left: .3em;
+                }
+            }
+            
+            .tweed-dropdown-btn {
+                height: min-content;
+                background: none;
+                border: none;
+                cursor: pointer;
+        
+                .tweed-dropdown-img {
+                    height: .5em;
+                    width: 1em;
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: .7em;
+
+            .tweed-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 2.1em;
+                width: 2.2em;
+                padding: .5em;
+                background: none;
+                border: none;
+                border-radius: 100px;
+                transition: .3s;
+                
+                .tweed-btn-img {
+                    height: 100%;
+                }
+            }
+            .tweed-btn:hover {
+                background-color: hsla(211, 55%, 40%, 0.3);
+                transition: .3s;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.tweed-container:hover {
+    background-color: #192734;
+    transition: background-color .3s;
+    cursor: pointer;
+}

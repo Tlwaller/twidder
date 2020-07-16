@@ -4,8 +4,8 @@
     background-color: #263341;
     width: 46vw;
     height: 100vh;
-    white-space: nowrap;
-    overflow-y: auto;
+    // white-space: nowrap;
+    overflow: auto, auto;
 
     .ul-title-container {
         display: flex;

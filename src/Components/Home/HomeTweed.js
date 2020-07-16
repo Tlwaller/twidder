@@ -1,6 +1,6 @@
 import React , { useState }from 'react'
 import { Link } from 'react-router-dom';
-import { propic, image, gif, poll, emoji, schedule, addTweed } from '../../Images';
+import { propic, image, gif, poll, emoji, schedule } from '../../Images';
 
 export default function HomeTweed() {
     const [tweedStatus, setTweedStatus] = useState('unready');
@@ -28,12 +28,13 @@ export default function HomeTweed() {
                         <button className='ht-btn'><img src={emoji} alt='add emoji' className='ht-btn-img'/></button>
                         <button className='ht-btn'><img src={schedule} alt='schedule tweed' className='ht-btn-img'/></button>
                     </div>
-                    <div className='ht-right-btns'>
+                    {/* <div className='ht-right-btns'> */}
                         {/*implement these later*/}
                         {/* <button className='ht-btn ht-add-tweed'><img src={addTweed} alt='add tweed' className='ht-btn-img'></img></button> */}
                         {/* <div className='vl'/> */}
-                        <button className={`ht-tweed-btn-${tweedStatus}`}>Tweed</button>
-                    </div>
+                        <button className={`ht-tweed-btn-${tweedStatus}`} 
+                        disabled={tweedStatus === 'ready' ? false : true}>Tweed</button>
+                    {/* </div> */}
                 </div>
             </div>
             

@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeTweed from './HomeTweed';
-import Tweed from './Tweed';
+import Tweed from '../Tweed';
 // import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getSession } from '../../Redux/Reducers/UserReducer';
