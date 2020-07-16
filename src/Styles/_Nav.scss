@@ -21,13 +21,13 @@
         width: 80%;
 
         #hover {
-            img {
+            .nav-icon {
                 animation: nav-hover .3s forwards;
             }
         }
 
         #leave {
-            img {
+            .nav-icon {
                 animation: nav-no-hover .3s forwards;
             }
         }
@@ -51,6 +51,7 @@
                 height: 1.5em;
                 width: 1.5em;
                 padding-right: 1em;
+                z-index: -999999;
             }
 
             b {
@@ -91,7 +92,7 @@
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1000px) {
     #navbar {
         padding-left: 1em;
         padding-right: 1em;
@@ -122,7 +123,7 @@
     }
 }
 
-@media(min-width: 768px) {
+@media(min-width: 1000px) {
     #navbar {
         padding-left: 1.5em;
     }

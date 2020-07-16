@@ -8,44 +8,44 @@ export default function Nav() {
     
     let home;
     if (location.pathname === "/home") {
-       home = <img src={bluHouse} alt='home'/>
+       home = <img src={bluHouse} alt='home' />
     } else {
-        home = <img src={house} alt='home'/>
+        home = <img src={house} alt='home' className='nav-icon'/>
     };
 
     let explore;
     if (location.pathname === "/explore") {
-        explore = <img src={bluHashtag} alt='explore'/>
+        explore = <img src={bluHashtag} alt='explore' />
     } else {
-         explore = <img src={hashtag} alt='explore'/>
+         explore = <img src={hashtag} alt='explore' className='nav-icon'/>
     };
 
     let notifications;
     if (location.pathname === "/notifications") {
-        notifications = <img src={bluBell} alt='notifications'/>
+        notifications = <img src={bluBell} alt='notifications' />
     } else {
-         notifications = <img src={bell} alt='notifications'/>
+         notifications = <img src={bell} alt='notifications' className='nav-icon'/>
     };
 
     let messages;
     if (location.pathname === "/messages") {
-        messages = <img src={bluEnvelope} alt='messages'/>
+        messages = <img src={bluEnvelope} alt='messages' />
     } else {
-         messages = <img src={envelope} alt='messages'/>
+         messages = <img src={envelope} alt='messages' className='nav-icon'/>
     };
 
     let bookmarks;
     if (location.pathname === "/bookmarks") {
-        bookmarks = <img src={bluBookmark} alt='bookmarks'/>
+        bookmarks = <img src={bluBookmark} alt='bookmarks' />
     } else {
-         bookmarks = <img src={bookmark} alt='bookmarks'/>
+         bookmarks = <img src={bookmark} alt='bookmarks' className='nav-icon'/>
     };
 
     let lists;
     if (location.pathname === "/lists") {
-        lists = <img src={bluList} alt='lists'/>
+        lists = <img src={bluList} alt='lists' />
     } else {
-         lists = <img src={list} alt='lists'/>
+         lists = <img src={list} alt='lists' className='nav-icon'/>
     };
 
     const hover = e => {
@@ -61,7 +61,7 @@ export default function Nav() {
         <div id='navbar' >
             <div id='nav-list'>
             <img className='white-birb' id='nav-bird' src={whiteBirb} alt='white birb'/>
-                <Link to='/home' className='nav-item' text='Home' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
+                <Link to='/home' className='nav-item' text='Home' onMouseEnter={(e) => e.target.id = 'hover'} onMouseLeave={(e) => e.target.id = 'leave'}>
                     {home}
                     <b>Home</b>
                 </Link>
