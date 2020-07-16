@@ -14,7 +14,7 @@ export default function Tweed() {
                         <h5 className='tweed-dot'>·</h5>
                         <h5 className='tweed-time'>30m</h5>
                     </hgroup>
-                    <button className='tweed-dropdown-btn'><img src={tweedDropdown} alt='dropdown' style={{height: 1 + 'em'}}/></button>
+                    <button className='tweed-dropdown-btn'><img src={tweedDropdown} alt='dropdown' className='tweed-dropdown-img'/></button>
                 </header>
             </main>
         </section>

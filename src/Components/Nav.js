@@ -48,32 +48,42 @@ export default function Nav() {
          lists = <img src={list} alt='lists'/>
     };
 
+    const hover = e => {
+        e.target.id = 'hover'
+        console.log(e.target.id);
+    }
+
+    const leaveHover = e => {
+        e.target.id = 'leave'
+        console.log(e.target.id);
+    }
+
     if((location.pathname !== '/') && (location.pathname !== '/login') && (location.pathname !== '/register')) {
     return (
         <div id='navbar' >
             <div id='nav-list'>
             <img className='white-birb' id='nav-bird' src={whiteBirb} alt='white birb'/>
-                <Link to='/home' className='nav-item' text='Home'>
+                <Link to='/home' className='nav-item' text='Home' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
                     {home}
                     <b>Home</b>
                 </Link>
-                <Link to='/explore' className='nav-item'>
+                <Link to='/explore' className='nav-item' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
                     {explore}
                     <b>Explore</b>
                 </Link>
-                <Link to='/notifications' className='nav-item'>
+                <Link to='/notifications' className='nav-item' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
                     {notifications}
                     <b>Notifications</b>
                 </Link>
-                <Link to='/messages' className='nav-item'>
+                <Link to='/messages' className='nav-item' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
                     {messages}
                     <b>Messages</b>
                 </Link>
-                <Link to='/bookmarks' className='nav-item'>
+                <Link to='/bookmarks' className='nav-item' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
                     {bookmarks}
                     <b>Bookmarks</b>
                 </Link>
-                <Link to='/lists' className='nav-item'>
+                <Link to='/lists' className='nav-item' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
                     {lists}
                     <b>Lists</b>
                 </Link>
@@ -81,10 +91,10 @@ export default function Nav() {
                     <img src={propic} alt='your profile'/>
                     <b>Profile</b>
                 </Link>
-                <Link className='nav-item'>
+                <button className='nav-item' onMouseEnter={e => hover(e)} onMouseLeave={e => leaveHover(e)}>
                     <img src={more} alt='more' />
                     <b>More</b>
-                </Link>
+                </button>
                 <button id='nav-tweed-btn'>
                     <img src={quill} alt='new tweed'/>
                     <b>Tweed</b>
