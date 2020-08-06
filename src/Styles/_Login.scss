@@ -70,20 +70,21 @@
                 color: rgba(245, 245, 245, 0.555);
             }
 
-            #login-error {
-                color: red;
-            }
-
-            #login-ok {
-                display: none;
-            }
         }
-
+        
         #register-link {
             text-decoration: none;
             color: $blue-bird;
         }
     }
+}
+
+#login-error {
+    color: red;
+}
+
+#login-ok {
+    display: none;
 }
 
 #login-bg, #login-container, #login-form, .login-label {

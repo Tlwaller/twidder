@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { loginUser } from '../Redux/Reducers/UserReducer'
+import { connect } from "react-redux";
 import { eyeglass, ppl, bubble, birb } from '../Images';
 
 class GuestLanding extends Component {
@@ -7,7 +9,9 @@ class GuestLanding extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      status: "incomplete",
+      error: "login-ok"
     };
   }
 
@@ -15,7 +19,17 @@ class GuestLanding extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    const { username, password } = this.state;
+    const { loginUser } = this.props;
+    loginUser({username, password}).catch(err => this.setState({error: 'login-error'}))
+  }
+
   render() {
+    if(this.props.userid) {
+      return <Redirect to='/home'/>
+    }
     return (
       <div id="gl-container">
         <div id="gl-left">
@@ -51,8 +65,9 @@ class GuestLanding extends Component {
               placeholder="password"
               onChange={this.handleChange}
             />
-            <input type="submit" value="Log In" id="gl-login-btn" />
+            <input type="submit" value="Log In" id="gl-login-btn" onClick={this.handleSubmit}/>
           </form>
+          <h6 id={this.state.error} style={{height: "0px"}}>Username/password incorrect</h6>
 
           <div id="gl-authbox">
             <img src={birb} alt="birb" id="gl-birb" />
@@ -73,4 +88,11 @@ class GuestLanding extends Component {
   }
 }
 
-export default GuestLanding;
+const mapStateToProps = reduxState => {
+  return {
+    userid: reduxState.userReducer.userid
+  }
+
+}
+
+export default connect(mapStateToProps, { loginUser })(GuestLanding);

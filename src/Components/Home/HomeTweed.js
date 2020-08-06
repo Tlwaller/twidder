@@ -13,6 +13,11 @@ export default function HomeTweed() {
         } else setTweedStatus('unready');
         
     }
+
+    // const postTweed = () => {
+
+    // }
+
     return (
         <div className='ht-container'>
             <Link to='/myprofile'>
