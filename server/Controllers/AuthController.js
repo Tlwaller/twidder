@@ -38,15 +38,15 @@ module.exports = {
     const foundUser = await db.auth.checkForUsername(username);
 
     if (!foundUser[0]) {
-      res.status(401).json("Inncorrect username/password");
+      res.status(401).json("Incorrect username/password");
     } else {
       const isAuthenticated = bcrypt.compareSync(
         password,
-        foundUser[0].password
+        foundUser[0].hash
       );
 
       if (!isAuthenticated) {
-        return res.status(401).json("Inncorrect username/password");
+        return res.status(401).json("Incorrect username/password");
       } else {
         req.session.user = {
           userid: foundUser[0].userid,
