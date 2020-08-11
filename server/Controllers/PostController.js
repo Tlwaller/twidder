@@ -19,6 +19,20 @@ module.exports = {
         } else res.status(403).json("Not signed in");
     },
 
+    editPost: async (req, res) => {
+        const db = req.app.get("db");
+        const [post] = await (db.posts.findPost(req.body.postid));
+
+        if(!req.session.user) {
+            res.sendStatus(401);
+        } else if(!post) {
+            res.sendStatus(404);
+        } else if(req.session.user.userid === post.authorid) {
+            db.posts.editPost(req.body.newContent, req.body.postid);
+            res.status(200).json("Post edited");
+        } else res.sendStatus(401);
+    },
+
     deletePost: async (req,res) => {
         const db = req.app.get("db");
         const {postid} = req.body;
