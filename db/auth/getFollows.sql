@@ -1,0 +1,1 @@
+SELECT following, followers FROM users WHERE userid = $1;

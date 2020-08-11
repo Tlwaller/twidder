@@ -1,3 +1,3 @@
-INSERT INTO posts (authorid, postcontent, likes)
-VALUES ($1, $2 , 0)
+INSERT INTO posts (authorid, postcontent)
+VALUES ($1, $2)
 RETURNING postcontent;

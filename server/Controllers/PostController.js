@@ -1,11 +1,20 @@
 module.exports = {
-    getPost: async (req, res) => {
+    getPosts: async (req, res) => {
         const db = req.app.get("db");
-        const post = await db.posts.findPost(req.body.postid);
+        const posts = await db.posts.getPosts();
+        res.status(200).json(posts);
+    },
 
-        if(post) {
-            res.status(200).json(post);
-        } else res.status(404).json("Post not found");
+    getMyFeed: async (req, res) => {
+        const db = req.app.get("db");
+
+        if(req.session.user) {
+            let [{following}] = await db.auth.getFollows(req.session.user.userid);
+            if(following) {
+                const posts = await db.posts.getMyFeed(`{${following}}`);
+                res.status(200).json(posts);
+            } else res.status(200).json('No posts to show');
+        } else res.sendStatus(401);
     },
 
     createPost: async (req, res) => {
