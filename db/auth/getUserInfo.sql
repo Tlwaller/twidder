@@ -1,0 +1,1 @@
+SELECT username, followers, following, month, day, year FROM users WHERE userid = $1
