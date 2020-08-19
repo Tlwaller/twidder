@@ -8,6 +8,10 @@ const postController = require("./Controllers/PostController");
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
+if ("development" == app.get("env")) {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
 app.use(express.json());
 app.use(
   session({
@@ -23,7 +27,7 @@ app.use(
 massive(CONNECTION_STRING).then(db => {
   app.set("db", db);
   console.log("db connected");
-});
+}).catch(err => console.log(err));
 
 //auth
 app.get("/auth/user", authController.getUser);
