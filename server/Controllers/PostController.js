@@ -11,8 +11,8 @@ module.exports = {
         if(req.session.user) {
             let [{following}] = await db.auth.getFollows(req.session.user.userid);
             if(following) {
-                const posts = await db.posts.getMyFeed(`{${following}}`);
-                res.status(200).json(posts);
+                const feed = await db.posts.getMyFeed(`{${following}}`);
+                res.status(200).json(feed);
             } else res.status(200).json('No posts to show');
         } else res.sendStatus(401);
     },
@@ -22,7 +22,7 @@ module.exports = {
 
         if(req.session.user) {
             if(req.body.postContent) {
-                const post = db.posts.createPost(req.session.user.userid, req.body.postContent);
+                const post = db.posts.createPost(req.session.user.userid, req.session.user.username, req.body.postContent);
                 res.status(200).json(post);
             } else res.status(403).json("Nothing to post");
         } else res.status(403).json("Not signed in");

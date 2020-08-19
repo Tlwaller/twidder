@@ -1,14 +1,14 @@
 import React from 'react'
 import HomeTweed from './HomeTweed';
-import Tweed from '../Tweed';
-// import { Redirect } from 'react-router-dom';
+import Feed from '../Tweeds/Feed';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getSession } from '../../Redux/Reducers/UserReducer';
 
-function UserLanding(){
-        // if(!props.userid) {
-        //     return <Redirect to='/'/>
-        // }
+function UserLanding(props){
+        if(!props.userid) {
+            return <Redirect to='/'/>
+        }
 
     return (
         <div id='ul-container'>
@@ -18,7 +18,7 @@ function UserLanding(){
                 </header>  
             </div>
             <HomeTweed/>
-            <Tweed/>
+            <Feed/>
         </div>
     )
 }

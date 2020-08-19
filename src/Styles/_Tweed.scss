@@ -71,6 +71,13 @@
             justify-content: space-evenly;
             margin-top: .7em;
 
+            .tweed-btn-count {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: $light-txt;
+            }
+
             .tweed-btn {
                 display: flex;
                 align-items: center;
@@ -82,7 +89,7 @@
                 border: none;
                 border-radius: 100px;
                 transition: .3s;
-                
+            
                 .tweed-btn-img {
                     height: 100%;
                 }

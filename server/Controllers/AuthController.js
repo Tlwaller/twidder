@@ -13,7 +13,7 @@ module.exports = {
     const { username, password, month, day, year } = req.body;
     const db = req.app.get("db");
 
-    const foundUser = await db.auth.getUser(username);
+    const foundUser = await db.auth.checkForUsername(username);
 
     if (foundUser[0]) {
       res.status(409).json("That username is taken");
@@ -35,7 +35,7 @@ module.exports = {
     const { username, password } = req.body;
     const db = req.app.get("db");
 
-    const foundUser = await db.auth.getUser(username);
+    const foundUser = await db.auth.checkForUsername(username);
 
     if (!foundUser[0]) {
       res.status(401).json("Incorrect username/password");
