@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { propic, tweedDropdown, comment, retweed, like, share, analytics } from '../../Images';
+import { connect } from 'react-redux';
+import { likePost } from '../../Redux/Reducers/PostReducer';
 
-export default function Tweed(props) {
-    const [likes, setlikes] = useState(props.likes.length);
+function Tweed(props) {
+    const [likeState, setLikeState] = useState(props.likes);
 
+    const handleLike = () => {
+        setLikeState(props.reduxLikes);
+    }
+    useEffect(() => {
+        props.likePost(props.postid);
+        setLikeState(props.reduxLikes);
+    }, [likeState])
     return (
         <section className='tweed-container'>
             <img src={propic} alt='profile pic' className='tweed-propic'/>
@@ -22,8 +31,8 @@ export default function Tweed(props) {
                         <button className='tweed-btn'><img src={comment} className='tweed-btn-img'/></button>
                         <button className='tweed-btn'><img src={retweed} className='tweed-btn-img'/></button>
                         <label className='tweed-btn-count'>
-                            <button className='tweed-btn' onClick={e => setlikes(likes + 1)}><img src={like} className='tweed-btn-img'/></button>
-                            {`${likes}`}
+                            <button className='tweed-btn' onClick={handleLike}><img src={like} className='tweed-btn-img'/></button>
+                            {likeState.length}
                         </label>
                         <button className='tweed-btn'><img src={share} className='tweed-btn-img'/></button>
                     </footer>
@@ -31,3 +40,11 @@ export default function Tweed(props) {
         </section>
     )
 }
+
+const mapStateToProps = reduxState => {
+    return {
+        reduxLikes: reduxState.postReducer.likes
+    }
+}
+
+export default connect(mapStateToProps, {likePost})(Tweed);

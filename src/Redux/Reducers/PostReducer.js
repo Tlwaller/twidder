@@ -1,11 +1,13 @@
 import axios from 'axios';
 
 const initialState = {
-    feed: []
+    feed: [],
+    likes: []
 }
 
 //constant strings
 const UPDATE_FEED = 'UPDATE_FEED';
+const LIKE_POST = 'LIKE_POST';
 // const UPDATE_USER_POSTS = 'UPDATE_USER_POSTS';
 // const CREATE_POST = 'CREATE_POST';
 // const DELETE_POST = 'DELETE_POST';
@@ -15,6 +17,13 @@ export function updateFeed() {
     return {
         type: UPDATE_FEED,
         payload: axios.get('/api/feed')
+    }
+};
+
+export function likePost(postid) {
+    return {
+        type: LIKE_POST,
+        payload: axios.post('/api/posts/likes', {postid})
     }
 };
 
@@ -51,10 +60,15 @@ export default function reducer(state = initialState, action) {
 
     switch(type) {
         case `${UPDATE_FEED}_FULFILLED`:
-            console.log('hit');
             return {
                 ...state,
                 feed: payload.data
+            };
+
+        case `${LIKE_POST}_FULFILLED`:
+            return {
+                ...state,
+                likes: payload.data
             };
 
         // case `${UPDATE_USER_POSTS}_FULFILLED`:

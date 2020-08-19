@@ -41,6 +41,6 @@ app.get("/api/feed", postController.getMyFeed);
 app.post("/api/posts", postController.createPost);
 app.put("/api/posts", postController.editPost);
 app.delete("/api/posts", postController.deletePost);
-app.post("/api/posts/likes", postController.like);
+app.post("/api/posts/likes", postController.likePost);
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`));

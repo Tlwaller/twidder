@@ -7,11 +7,11 @@ function Feed(props) {
     useEffect(() => {
         props.updateFeed();
     }, []);
+    console.log(props.feed);
     const feedMapped = props.feed.map((post, i) => {
-        console.log(post);
         return (
             <Tweed key={i} postid={post.postid} authorid={post.authorid} authorname={post.authorname}
-            postcontent={post.postcontent} tags={PopStateEvent.tags} likes={post.likes}/>
+            postcontent={post.postcontent} tags={post.tags} likes={post.likes}/>
         )
     })
 
