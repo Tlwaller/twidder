@@ -1,0 +1,1 @@
+UPDATE posts SET likes = array_append(likes, $1) WHERE postid = $2

@@ -1,0 +1,1 @@
+UPDATE posts SET likes = array_remove(likes, $1) WHERE postid = $2

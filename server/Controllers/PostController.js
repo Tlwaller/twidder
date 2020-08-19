@@ -55,5 +55,23 @@ module.exports = {
             db.posts.deletePost(postid);
             res.status(200).json('Post removed')
         } else res.sendStatus(401);
+    },
+
+    like: async (req, res) => {
+        const db = req.app.get("db");
+        const {postid} = req.body;
+        const [post] = await (db.posts.findPost(postid));
+
+        if(!req.session.user) {
+            res.sendStatus(401);
+        } else if(!post) {
+            res.sendStatus(404);
+        } else if(post.likes.find(e => e === req.session.user.userid)) {
+            db.posts.unlike(req.session.user.userid, post.postid);
+            res.status(200).json('unliked');
+        } else if(!post.likes.find(e => e === req.session.user.userid)) {
+            db.posts.like(req.session.user.userid, post.postid);
+            res.status(200).json('liked');
+        } else res.sendStatus(401);
     }
 }
